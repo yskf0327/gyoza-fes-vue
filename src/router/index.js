@@ -1,46 +1,44 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomePage from '../pages/HomePage.vue';
-import MenuPage from '../pages/MenuPage.vue';
 
 const routes = [
   {
     path: '/',
-    component: HomePage,
+    component: ()=>import('../pages/HomePage.vue'),
     name: 'Home',
   },
   {
     path: '/about',
-    component: AboutPage,
+    component: ()=>import('../pages/AboutPage.vue'),
     name: 'About',
   },
   {
     path: '/faq',
-    component: FaqPage,
+    component: ()=>import('../pages/FaqPage.vue'),
     name: 'Faq',
   },
   {
     path: '/access',
-    component: AccessPage,
+    component: ()=>import('../pages/AccessPage.vue'),
     name: 'Access',
   },
   {
     path: '/menu',
-    component: MenuPage,
+    component: ()=>import('../pages/MenuPage.vue'),
     name: 'Menu',
   },
   {
     path: '/menu-detail',
-    component: MenuDetailPage,
+    component: ()=>import('../pages/MenuDetailPage.vue'),
     name: 'MenuDetail',
   },
   {
     path: '/contact',
-    component: ContactPage,
+    component: ()=>import('../pages/ContactPage.vue'),
     name: 'Contact',
   },
   {
     path: '/privacy',
-    component: PrivacyPage,
+    component: ()=>import('../pages/PrivacyPage.vue'),
     name: 'Privacy',
   },
 ];
