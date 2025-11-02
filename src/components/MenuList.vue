@@ -11,8 +11,9 @@ const getStoreInfo = (storeId)=>{
 <template>
   <ul class="menu-list">
     <MenuCard
-      v-for="(item,index) in items "
+      v-for="(item,index) in items"
       :key="index"
+      :menuId="item.id"
       :menuName="item.menuName"
       :portion="item.portion"
       :price="item.price"

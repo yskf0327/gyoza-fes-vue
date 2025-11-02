@@ -5,8 +5,7 @@
     </figure>
     <p class="booth">
       <span class="booth-icon">
-        <font-awesome-icon icon="location-dot" /> </span
-      >{{ booth }}
+        <font-awesome-icon icon="location-dot" /> </span>{{ booth }}
     </p>
     <p class="menu-name">{{ menuName }}</p>
     <dl class="menu-info">
@@ -19,11 +18,16 @@
         <dd>{{ storeName }}</dd>
       </div>
     </dl>
+    <p class="more-link">
+      <router-link :to="`/menu/${menuId}`">詳細を見る</router-link>
+    </p>
   </li>
+
 </template>
 
 <script setup>
 defineProps({
+  menuId:Number,
   menuName: String,
   portion: String,
   price: Number,
@@ -72,8 +76,10 @@ defineProps({
   line-height: 1.6;
   display: flex;
   gap: var(--s-xs);
+
   dt {
     flex-shrink: 0;
+
     &::after {
       content: ':';
     }
