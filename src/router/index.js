@@ -7,9 +7,15 @@ const routes = [
     name: 'Home',
   },
   {
-    path: '/about',
-    component: ()=>import('../pages/AboutPage.vue'),
-    name: 'About',
+    path: '/news',
+    component: ()=>import('../pages/NewsPage.vue'),
+    name: 'News',
+  },
+    {
+    path: '/news/:id',
+    component: ()=>import('../pages/NewsDetailPage.vue'),
+    name: 'NewsDetail',
+    props:true
   },
   {
     path: '/faq',
@@ -17,19 +23,15 @@ const routes = [
     name: 'Faq',
   },
   {
-    path: '/access',
-    component: ()=>import('../pages/AccessPage.vue'),
-    name: 'Access',
-  },
-  {
     path: '/menu',
     component: ()=>import('../pages/MenuPage.vue'),
     name: 'Menu',
   },
   {
-    path: '/menu-detail',
+    path: '/menu/:id',
     component: ()=>import('../pages/MenuDetailPage.vue'),
     name: 'MenuDetail',
+    props:true
   },
   {
     path: '/contact',

@@ -3,6 +3,6 @@
 
 <template>
   <div class="container">
-    <p>access</p>
+    <p>news detail</p>
   </div>
 </template>

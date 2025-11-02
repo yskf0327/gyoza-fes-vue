@@ -3,6 +3,6 @@
 
 <template>
   <div class="container">
-    <p>about</p>
+    <p>news</p>
   </div>
 </template>
