@@ -1,0 +1,36 @@
+@charset "utf-8";
+:root {
+  --color-red: #e22a00;
+  --color-yellow: #ffe100;
+  --color-pink: #fff7f7;
+  --color-black: #131a12;
+  --color-white: #ffffff;
+
+  --s-3xs: 3px;
+  --s-2xs: 5px;
+  --s-xs: 8px;
+  --s-sm: 13px;
+  --s-md: 21px;
+  --s-lg: 34px;
+  --s-xl: 55px;
+  --s-2xl: 89px;
+  --s-3xl: 144px;
+}
+body {
+  font-size: clamp(0.875rem, 0.831rem + 0.188vw, 1rem);
+  line-height: 1;
+}
+
+dt {
+  font-weight: normal;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+.container {
+  width: min(92%, 980px);
+  margin-inline: auto;
+}
