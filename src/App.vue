@@ -1,24 +1,20 @@
 <template>
   <div id="app">
-    <header>
-      <nav>
-        <router-link to="/">Home</router-link>
-        <router-link to="/menu">Menu</router-link>
-      </nav>
-    </header>
+    <Header></Header>
     <main>
       <router-view />
     </main>
-    <footer>
-      <small>&copy; 2025 Fukuoka Gyoza Fess</small>
-    </footer>
+    <Footer></Footer>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import Header from '@/components/Header.vue'
+import Footer from '@/components/Footer.vue'
+</script>
 
 <style scoped>
-body{
+body {
   background-color: #fff;
 }
 </style>

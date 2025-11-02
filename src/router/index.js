@@ -5,11 +5,13 @@ import MenuPage from '../pages/MenuPage.vue';
 const routes = [
   {
     path: '/',
-    component: HomePage
+    component: HomePage,
+    name:'Home'
   },
   {
     path:'/menu',
-    component: MenuPage
+    component: MenuPage,
+    name:'Menu'
   }
 ];
 
