@@ -2,23 +2,20 @@
 import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import items from '../data/items.json';
+import MenuList from '../components/MenuList.vue'
 
 const route = useRoute();
-const item = ref(null);
-
-onMounted(() => {
-  const id = Number(route.params.id);
-  item.value = items.find(item => item.id === id)
+onMounted(()=>{
+  // console.log(route.params.id)
 })
+
 </script>
 
 <template>
   <div class="container">
-    <div v-if="item">
-      <h1 class="page-title">{{ item.menuName }}</h1>
-    </div>
-    <div v-else>
-      <p>メニューがありません。</p>
+    <p class="page-titel">menu</p>
+    <div>
+          <MenuList :isDetail="true" :itemId="route.params.id"></MenuList>
     </div>
     <router-link to="/menu">一覧に戻る</router-link>
   </div>

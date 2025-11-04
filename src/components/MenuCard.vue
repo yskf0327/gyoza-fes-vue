@@ -1,11 +1,10 @@
 <template>
   <li class="menu-card">
     <figure class="menu-img">
-      <img :src="'images/' + image" :alt="menuName" />
+      <img :src="'/images/' + image" :alt="menuName" />
     </figure>
     <p class="booth">
-      <span class="booth-icon">
-        <font-awesome-icon icon="location-dot" /> </span>{{ booth }}
+      <span class="booth-icon"> <font-awesome-icon icon="location-dot" /> </span>{{ booth }}
     </p>
     <p class="menu-name">{{ menuName }}</p>
     <dl class="menu-info">
@@ -13,28 +12,38 @@
         <dt>価格</dt>
         <dd>{{ portion + ' ' + price + '円' }}</dd>
       </div>
-      <div class="menu-info-item">
-        <dt>店名</dt>
-        <dd>{{ storeName }}</dd>
-      </div>
     </dl>
-    <p class="more-link">
+    <div v-if="isDetail" class="menu-info-detail">
+      <p class="menu-desc">{{ menuDesc }}</p>
+      <div class="store-info">
+        <p class="store-name">{{ storeName }}</p>
+        <p class="store-desc">{{ storeDesc }}</p>
+      </div>
+    </div>
+    <p class="more-link" v-if="!isDetail">
       <router-link :to="`/menu/${menuId}`">詳細を見る</router-link>
     </p>
   </li>
-
 </template>
 
 <script setup>
-defineProps({
-  menuId:Number,
+import { ref, onMounted } from 'vue';
+
+const props = defineProps({
+  menuId: Number,
   menuName: String,
   portion: String,
   price: Number,
-  description: String,
+  menuDesc: String,
   storeName: String,
+  storeDesc: String,
   booth: String,
   image: String,
+  isDetail: Boolean,
+});
+
+onMounted(() => {
+  console.log(props.isDetail);
 });
 </script>
 

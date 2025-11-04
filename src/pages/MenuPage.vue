@@ -7,6 +7,6 @@ import MenuList from '../components/MenuList.vue'
     <h1>メニューページ</h1>
   </div>
   <div class="container">
-    <MenuList></MenuList>
+    <MenuList :isDetail="false"></MenuList>
   </div>
 </template>
